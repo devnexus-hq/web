@@ -16,7 +16,7 @@ import {
   FileText,
   Cpu,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const APK_URL = "https://github.com/Co3code/capstone2/releases/download/v1.2.0/AIfoundIT.v1.2.0.apk";
 const HERO_VIDEO_URL = "/sample2.mp4";
@@ -491,18 +491,58 @@ const Footer = () => {
   );
 };
 
+const SECTION_IDS = ["hero", "features", "how-it-works", "tips", "download"];
+
 export default function App() {
+  const currentIndex = useRef(0);
+  const [navHint, setNavHint] = useState(true);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+      e.preventDefault();
+      if (e.key === "ArrowDown") {
+        currentIndex.current = Math.min(currentIndex.current + 1, SECTION_IDS.length - 1);
+      } else {
+        currentIndex.current = Math.max(currentIndex.current - 1, 0);
+      }
+      document.getElementById(SECTION_IDS[currentIndex.current])?.scrollIntoView({ behavior: "smooth" });
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    const timer = setTimeout(() => setNavHint(false), 4000);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#070709]">
       <Navbar />
       <main>
-        <VideoBanner />
+        <div id="hero"><VideoBanner /></div>
         <Features />
         <HowItWorks />
         <PostingTips />
         <CTA />
       </main>
       <Footer />
+
+      {/* Arrow key nav hint */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: navHint ? 1 : 0, x: navHint ? 0 : 20 }}
+        transition={{ duration: 0.5 }}
+        className="fixed right-6 bottom-8 z-50 flex flex-col items-center gap-2 pointer-events-none"
+      >
+        <div className="flex flex-col items-center gap-1 bg-white/[0.04] border border-white/10 backdrop-blur-md px-4 py-3 rounded-2xl">
+          <span className="text-white/30 text-[10px] tracking-widest uppercase mb-1">navigate</span>
+          <div className="flex flex-col items-center gap-1">
+            <div className="w-7 h-7 rounded-lg border border-white/10 bg-white/5 flex items-center justify-center text-white/50 text-xs">↑</div>
+            <div className="w-7 h-7 rounded-lg border border-white/10 bg-white/5 flex items-center justify-center text-white/50 text-xs">↓</div>
+          </div>
+        </div>
+      </motion.div>
     </div>
   );
 }
