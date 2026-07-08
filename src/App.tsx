@@ -169,7 +169,7 @@ const Features = () => {
       icon: <Search className="w-8 h-8 stroke-[1]" />,
       title: "AI Image Matching",
       description:
-        "Our ResNet-50 neural network analyzes item photos to find visual similarities between lost and found posts.",
+        "Our AI uses the CLIP model to compare item photos and find visually similar matches between lost and found reports.",
     },
     {
       icon: <Bell className="w-8 h-8 stroke-[1]" />,
@@ -232,7 +232,7 @@ const HowItWorks = () => {
     {
       number: "02",
       title: "Match",
-      description: "Our AI combines ResNet-50 image analysis and text similarity to find the best match automatically.",
+      description: "Our AI combines CLIP-based image matching with text similarity to automatically find the best lost and found matches.",
     },
     {
       number: "03",
