@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
-const APK_URL = "https://github.com/Co3code/capstone2/releases/download/v1.2.0/AIfoundIT.v1.2.0.apk";
+const APK_URL = "https://github.com/Co3code/capstone2/releases/download/v1.4.0/AIFoundITv1.4.0.apk";
 const HERO_VIDEO_URL = "/sample2.mp4";
 
 const Navbar = () => {
@@ -232,7 +232,8 @@ const HowItWorks = () => {
     {
       number: "02",
       title: "Match",
-      description: "Our AI combines CLIP-based image matching with text similarity to automatically find the best lost and found matches.",
+      description:
+        "Our AI combines CLIP-based image matching with text similarity to automatically find the best lost and found matches.",
     },
     {
       number: "03",
@@ -520,7 +521,9 @@ export default function App() {
     <div className="min-h-screen bg-[#070709]">
       <Navbar />
       <main>
-        <div id="hero"><VideoBanner /></div>
+        <div id="hero">
+          <VideoBanner />
+        </div>
         <Features />
         <HowItWorks />
         <PostingTips />
@@ -538,8 +541,12 @@ export default function App() {
         <div className="flex flex-col items-center gap-1 bg-white/[0.04] border border-white/10 backdrop-blur-md px-4 py-3 rounded-2xl">
           <span className="text-white/30 text-[10px] tracking-widest uppercase mb-1">navigate</span>
           <div className="flex flex-col items-center gap-1">
-            <div className="w-7 h-7 rounded-lg border border-white/10 bg-white/5 flex items-center justify-center text-white/50 text-xs">↑</div>
-            <div className="w-7 h-7 rounded-lg border border-white/10 bg-white/5 flex items-center justify-center text-white/50 text-xs">↓</div>
+            <div className="w-7 h-7 rounded-lg border border-white/10 bg-white/5 flex items-center justify-center text-white/50 text-xs">
+              ↑
+            </div>
+            <div className="w-7 h-7 rounded-lg border border-white/10 bg-white/5 flex items-center justify-center text-white/50 text-xs">
+              ↓
+            </div>
           </div>
         </div>
       </motion.div>
