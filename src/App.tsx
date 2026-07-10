@@ -16,9 +16,9 @@ import {
   FileText,
   Cpu,
 } from "lucide-react";
+
 import { useState, useEffect, useRef } from "react";
 
-const APK_URL = "https://github.com/Co3code/capstone2/releases/download/v1.4.0/AIFoundITv1.4.0.apk";
 const HERO_VIDEO_URL = "/sample2.mp4";
 
 const Navbar = () => {
@@ -428,13 +428,6 @@ const CTA = () => {
         <p className="text-xl text-white/40 font-light mb-12 max-w-lg">
           Install AIFoundIt on your Android device today and let AI help reunite you with your lost items.
         </p>
-        <a
-          href={APK_URL}
-          className="inline-flex items-center gap-3 bg-white text-[#070709] px-10 py-5 rounded-full text-lg font-medium hover:scale-105 transition-transform shadow-[0_0_40px_rgba(255,255,255,0.1)] mb-8"
-        >
-          <Download className="w-5 h-5 stroke-[2]" />
-          Download Android APK
-        </a>
 
         <div className="max-w-lg mx-auto p-5 rounded-2xl bg-white/[0.02] border border-white/5 text-center">
           <p className="text-white/50 font-light text-sm leading-relaxed">
