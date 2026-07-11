@@ -413,6 +413,7 @@ const PostingTips = () => {
 };
 
 const CTA = () => {
+  const APK_URL = "/download";
   return (
     <section id="download" className="py-40 bg-[#070709] border-t border-white/[0.02] relative overflow-hidden">
       {/* Background glow orb */}
@@ -428,6 +429,16 @@ const CTA = () => {
         <p className="text-xl text-white/40 font-light mb-12 max-w-lg">
           Install AIFoundIt on your Android device today and let AI help reunite you with your lost items.
         </p>
+
+        <a
+          href={APK_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-gradient-to-r from-[#FF416C] to-[#FF4B2B] text-white font-normal hover:scale-105 transition-transform shadow-[0_0_30px_rgba(255,65,108,0.3)]"
+        >
+          <Download className="w-5 h-5 stroke-[1.5]" />
+          Download APK
+        </a>
 
         <div className="max-w-lg mx-auto p-5 rounded-2xl bg-white/[0.02] border border-white/5 text-center">
           <p className="text-white/50 font-light text-sm leading-relaxed">
