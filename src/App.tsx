@@ -440,7 +440,7 @@ const CTA = () => {
           Download APK
         </a>
 
-        <div className="max-w-lg mx-auto p-5 rounded-2xl bg-white/[0.02] border border-white/5 text-center">
+        <div className="max-w-lg mx-auto p-5 rounded-2xl bg-white/[0.02] border border-white/5 text-center mt-[20px]">
           <p className="text-white/50 font-light text-sm leading-relaxed">
             <span className="text-white/80 font-normal">Note:</span> This app is not yet available on Google Play Store.{" "}
             <br />

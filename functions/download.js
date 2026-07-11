@@ -3,7 +3,7 @@ export async function onRequest(context) {
 
   const response = await fetch(GITHUB_URL, {
     headers: { "User-Agent": "Cloudflare-Pages-Function" },
-    redirect: "follow",
+    redirect: "follow", 
   });
 
   if (!response.ok) {
